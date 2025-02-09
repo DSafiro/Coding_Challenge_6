@@ -62,3 +62,15 @@ const applyBulkDiscount = (orders, discountFunction) => {
     console.log(`Expected Output: ${discount}`) // Outputs expected discounts
 } // Declares function to apply bulk discount
 applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount); // Inputs values and applies 10% discount if amount is greater than $500. Produces expected outputs of [200, 540, 1080, 450, 720] as shown in test data
+
+// Task 7: Business Expense Tracker
+function createExpenseTracker() {
+    let totalExpenses = 0; // Declares total expense as a variable
+    return function (expense) {
+        totalExpenses += expense // Adds expense to total expenses
+        return totalExpenses // Returns updated total expenses
+    }; // Declares function that updates total expenses
+}; // Declares function that tracks expenses
+let tracker = createExpenseTracker(); // Declares tracker variable by returning createExpenseTracker function
+console.log(`Total Expenses: ${tracker(200)}`); // Outputs total expenses of $200 as shown in test data
+console.log(`Total Expenses: ${tracker(150)}`); // Outputs updated total expenses of $350 as shown in test data
