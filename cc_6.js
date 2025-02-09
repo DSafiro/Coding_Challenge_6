@@ -27,7 +27,7 @@ const calculateBonus = (salary, performanceRating) => {
     };
     console.log(`Bonus: $${bonus}`); // Outputs calculated bonus
 }; // Declares arrow function to calculate bonus
-calculateBonus(5000, "Excellent"); // Inputs values and produces expected output of $1000 aas shown in test data
+calculateBonus(5000, "Excellent"); // Inputs values and produces expected output of $1000 as shown in test data
 calculateBonus(7000, "Good"); // Inputs values and produces expected output of $700 as shown in test data
 
 // Task 4: Subscription Pricing Model
@@ -54,3 +54,11 @@ function convertCurrency(amount, exchangeRate) {
 }; // Declares function that calculates converted currency
 convertCurrency(100, 1.1); // Inputs values and produces expected output of $110.00 as shown in test data
 convertCurrency(250, 0.85); // Inputs values and produces expected output of $212.50 as shown in test data
+
+// Task 6: Higher-Order Functions for Bulk Orders
+let orders = [200, 600, 1200, 450, 800];
+const applyBulkDiscount = (orders, discountFunction) => {
+    let discount = orders.map(discountFunction) // Applies discount function to each order
+    console.log(`Expected Output: ${discount}`) // Outputs expected discounts
+} // Declares function to apply bulk discount
+applyBulkDiscount(orders, amount => amount > 500 ? amount * 0.9 : amount); // Inputs values and applies 10% discount if amount is greater than $500. Produces expected outputs of [200, 540, 1080, 450, 720] as shown in test data
