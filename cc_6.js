@@ -74,3 +74,17 @@ function createExpenseTracker() {
 let tracker = createExpenseTracker(); // Declares tracker variable by returning createExpenseTracker function
 console.log(`Total Expenses: ${tracker(200)}`); // Outputs total expenses of $200 as shown in test data
 console.log(`Total Expenses: ${tracker(150)}`); // Outputs updated total expenses of $350 as shown in test data
+
+// Task 8: Employee Promotion Evaluation
+function calculateYearsToPromotion (employeeLevel) {
+    let yearsLeft = (10 - employeeLevel) * 2; // Calculates years left by subtracting level by 10 and multiplying it by 2 
+    if (employeeLevel >= 10) { // If employee is >= 10, outputs level 10 reached 
+        console.log(`Level 10 Reached`); // Outputs level 10 reached
+    } else {  // If employee is less than 10, outputs years left
+        console.log(`Years to Level 10: ${yearsLeft}`); // Outputs years left
+        return yearsLeft; // Returns years left
+    }; 
+}; // Declares function to calculate years to promotion
+calculateYearsToPromotion(7); // Inputs value and outputs years left as 6 as shown in test data
+calculateYearsToPromotion(5); // Inputs valye and outputs years left as 10 as shown in test data
+
